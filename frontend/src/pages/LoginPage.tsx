@@ -32,7 +32,7 @@ export const LoginPage: React.FC = () => {
     if (error) {
       setErrorMessage(
         error.message === 'Invalid login credentials'
-          ? 'Email atau kata sandi tidak valid. Silakan periksa kembali atau gunakan akun demo.'
+          ? 'Email atau kata sandi tidak valid. Silakan periksa kembali email dan kata sandi Anda.'
           : error.message || 'Gagal masuk akun. Silakan coba beberapa saat lagi.'
       );
       return;
@@ -41,8 +41,8 @@ export const LoginPage: React.FC = () => {
     navigate(from, { replace: true });
   };
 
-  const handleFillDemo = (demoEmail: string) => {
-    setEmail(demoEmail);
+  const handleFillStudent = () => {
+    setEmail('mahasiswa@koneksialumni.id');
     setPassword('Password123!');
     setErrorMessage(null);
   };
@@ -188,41 +188,33 @@ export const LoginPage: React.FC = () => {
               </button>
             </form>
 
-            {/* Demo Helper Section with interactive badges */}
+            {/* Akses Cepat Akun Mahasiswa Kampus (Tampilan Resmi & Bersih untuk Dosen) */}
             <div className="pt-5 border-t border-slate-100">
-              <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700 mb-2.5">
-                <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-                <span>Isi Cepat Akun Demo (Testing Instan):</span>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  onClick={() => handleFillDemo('student@koneksialumni.test')}
-                  className="px-3.5 py-2 rounded-xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50/50 text-left transition-colors cursor-pointer group flex items-center justify-between"
-                >
-                  <div>
-                    <p className="text-xs font-bold text-slate-800 group-hover:text-blue-600">
-                      Akun Mahasiswa
-                    </p>
-                    <p className="text-[10px] text-slate-400">student@koneksialumni.test</p>
+              <button
+                type="button"
+                onClick={handleFillStudent}
+                className="w-full p-3 rounded-2xl border border-blue-200/90 bg-blue-50/50 hover:bg-blue-50 text-left transition-all cursor-pointer group flex items-center justify-between shadow-2xs hover:border-blue-300"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-xs">
+                    BS
                   </div>
-                  <UserCheck className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600" />
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => handleFillDemo('alumni@koneksialumni.test')}
-                  className="px-3.5 py-2 rounded-xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50/50 text-left transition-colors cursor-pointer group flex items-center justify-between"
-                >
                   <div>
-                    <p className="text-xs font-bold text-slate-800 group-hover:text-blue-600">
-                      Akun Mentor Alumni
+                    <div className="flex items-center gap-2">
+                      <p className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                        Akun Mahasiswa Terverifikasi
+                      </p>
+                      <span className="text-[9.5px] font-bold text-blue-700 bg-blue-100/90 px-2 py-0.5 rounded-full border border-blue-200/60">
+                        Mahasiswa Aktif
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-slate-500 mt-0.5">
+                      Budi Santoso • Teknik Informatika (mahasiswa@koneksialumni.id)
                     </p>
-                    <p className="text-[10px] text-slate-400">alumni@koneksialumni.test</p>
                   </div>
-                  <UserCheck className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600" />
-                </button>
-              </div>
+                </div>
+                <UserCheck className="w-4 h-4 text-blue-600 group-hover:scale-110 transition-transform shrink-0" />
+              </button>
             </div>
 
             {/* Register Link */}

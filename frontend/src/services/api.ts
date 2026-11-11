@@ -10,6 +10,7 @@ export interface ApiResponse<T = any> {
 
 async function request<T = any>(endpoint: string, options: RequestInit = {}): Promise<ApiResponse<T>> {
   const token = localStorage.getItem('supabase_token');
+  const apiBase = (import.meta.env.VITE_API_URL || '/api').replace(/\/+$/, '');
 
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
@@ -20,7 +21,7 @@ async function request<T = any>(endpoint: string, options: RequestInit = {}): Pr
     headers['Authorization'] = `Bearer ${token}`;
   }
 
-  const response = await fetch(`/api${endpoint}`, {
+  const response = await fetch(`${apiBase}${endpoint}`, {
     ...options,
     headers,
   });
