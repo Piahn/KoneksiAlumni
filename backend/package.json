@@ -1,0 +1,28 @@
+{
+  "name": "koneksi-alumni-backend",
+  "version": "1.0.0",
+  "description": "KoneksiAlumni Backend API — Bun + Express + Supabase",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "bun run --watch src/server.ts",
+    "start": "bun run src/server.ts",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "cors": "^2.8.5",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "zod": "^3.23.0",
+    "express-rate-limit": "^7.4.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/morgan": "^1.9.9",
+    "@types/bun": "latest",
+    "typescript": "^5.6.0"
+  }
+}
+
