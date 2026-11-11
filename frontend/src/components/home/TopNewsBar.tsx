@@ -37,7 +37,7 @@ export const TopNewsBar: React.FC = () => {
       title: 'Graduation 2026: Thousands of Students Officially Join Alumni Community',
       date: '10 April 2026',
       readTime: '3 min read',
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=300&q=80',
+      image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=300&q=80',
     },
   ];
 
@@ -58,6 +58,10 @@ export const TopNewsBar: React.FC = () => {
                   height={56}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
                   loading="lazy"
+                  onError={(e) => {
+                    // Fallback to a solid pleasant campus gradient if network drops
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=300&q=80';
+                  }}
                 />
               </div>
               <div className="flex-1 min-w-0">

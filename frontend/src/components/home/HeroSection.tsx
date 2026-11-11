@@ -16,7 +16,7 @@ export const HeroSection: React.FC = () => {
 
         {/* Subtitle */}
         <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto mt-4 leading-relaxed font-normal">
-          A lifelong network for Nusantara Global University alumni to grow careers, build meaningful connections, and give back.
+          A lifelong network for KoneksiAlumni graduates to grow careers, build meaningful connections, and give back.
         </p>
 
         {/* Two Pill Buttons */}
@@ -36,13 +36,13 @@ export const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Hero Campus Facade & Graduates Composition (Exact Nusantara Style) */}
+      {/* Hero Campus Facade & Graduates Composition (Exact KoneksiAlumni Style) */}
       <div className="relative mt-12 sm:mt-16 w-full max-w-6xl mx-auto px-4 flex flex-col items-center">
         {/* Neoclassical campus building illustration / image */}
         <div className="relative w-full max-h-[380px] overflow-hidden rounded-t-3xl border-t border-x border-slate-200/90 shadow-2xl bg-white">
           <img
             src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=85"
-            alt="Nusantara Global University Campus Building and Graduates"
+            alt="KoneksiAlumni Campus Building and Graduates"
             width={1600}
             height={520}
             className="w-full h-[280px] sm:h-[360px] object-cover object-top"

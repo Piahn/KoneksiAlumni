@@ -83,7 +83,7 @@ export const LoginPage: React.FC = () => {
                 <path d="M18 10V26" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" />
               </svg>
               <span className="text-xs font-bold tracking-wider uppercase text-blue-100">
-                Nusantara University Portal
+                KoneksiAlumni Portal
               </span>
             </div>
 

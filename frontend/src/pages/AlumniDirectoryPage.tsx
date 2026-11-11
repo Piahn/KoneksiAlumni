@@ -199,6 +199,26 @@ export const AlumniDirectoryPage: React.FC = () => {
             Pilih mentor alumni terverifikasi berdasarkan bidang minat dan perusahaan impian Anda.
             Sesi konsultasi 1-on-1 gratis diselenggarakan via Jitsi Meet.
           </p>
+
+          {/* Quick Network Stats Strip (shadcn style) */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+            <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Total Alumni</span>
+              <p className="text-lg font-extrabold text-blue-600 mt-0.5">25,000+</p>
+            </div>
+            <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Perusahaan Mitra</span>
+              <p className="text-lg font-extrabold text-slate-900 mt-0.5">300+ Korporasi</p>
+            </div>
+            <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Daya Serap Kerja</span>
+              <p className="text-lg font-extrabold text-slate-900 mt-0.5">86% &lt; 6 Bulan</p>
+            </div>
+            <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Biaya Sesi</span>
+              <p className="text-lg font-extrabold text-emerald-600 mt-0.5">100% Gratis</p>
+            </div>
+          </div>
         </div>
 
         {/* Filter & Search Bar */}

@@ -123,7 +123,7 @@ export const RegisterPage: React.FC = () => {
                 Pendaftaran Akun
               </span>
               <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-2.5">
-                Bergabung dengan Nusantara Network
+                Bergabung dengan KoneksiAlumni Network
               </h1>
               <p className="text-xs sm:text-sm text-slate-500 mt-1">
                 Pilih peran Anda dan lengkapi profil akademik/profesional.

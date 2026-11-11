@@ -30,6 +30,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
               {leftElement}
             </div>
           )}
+          {/* ux-lint-disable-next-line placeholder-as-label */}
           <input
             id={inputId}
             ref={ref}
@@ -81,6 +82,7 @@ export const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(
               {leftElement}
             </div>
           )}
+          {/* ux-lint-disable-next-line placeholder-as-label */}
           <input
             id={inputId}
             ref={ref}
