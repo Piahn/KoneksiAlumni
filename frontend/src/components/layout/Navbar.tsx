@@ -16,7 +16,14 @@ import {
   Users,
   Building2,
   TrendingUp,
-  HelpCircle
+  HelpCircle,
+  Brain,
+  Handshake,
+  Calendar,
+  Globe2,
+  HeartHandshake,
+  Landmark,
+  Award
 } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { Logo } from '../ui/Logo';
@@ -51,34 +58,40 @@ export const Navbar: React.FC = () => {
   const handleMouseEnterAbout = () => {
     if (aboutTimeoutRef.current) clearTimeout(aboutTimeoutRef.current);
     setAboutDropdownOpen(true);
+    setNetworkDropdownOpen(false);
+    setProgramsDropdownOpen(false);
   };
 
   const handleMouseLeaveAbout = () => {
     aboutTimeoutRef.current = setTimeout(() => {
       setAboutDropdownOpen(false);
-    }, 150);
+    }, 180);
   };
 
   const handleMouseEnterNetwork = () => {
     if (networkTimeoutRef.current) clearTimeout(networkTimeoutRef.current);
     setNetworkDropdownOpen(true);
+    setAboutDropdownOpen(false);
+    setProgramsDropdownOpen(false);
   };
 
   const handleMouseLeaveNetwork = () => {
     networkTimeoutRef.current = setTimeout(() => {
       setNetworkDropdownOpen(false);
-    }, 150);
+    }, 180);
   };
 
   const handleMouseEnterPrograms = () => {
     if (programsTimeoutRef.current) clearTimeout(programsTimeoutRef.current);
     setProgramsDropdownOpen(true);
+    setAboutDropdownOpen(false);
+    setNetworkDropdownOpen(false);
   };
 
   const handleMouseLeavePrograms = () => {
     programsTimeoutRef.current = setTimeout(() => {
       setProgramsDropdownOpen(false);
-    }, 150);
+    }, 180);
   };
 
   useEffect(() => {
@@ -108,14 +121,14 @@ export const Navbar: React.FC = () => {
             {/* Brand Logo: KoneksiAlumni */}
             <Link
               to="/"
-              className="flex items-center gap-3 focus:outline-none rounded-lg group"
+              className="flex items-center gap-3 focus:outline-none rounded-lg group shrink-0"
             >
               <Logo size="md" />
             </Link>
 
-            {/* Desktop Navigation Links */}
+            {/* Desktop Navigation Links with Spacious Mega Menus (Exact Image 1 Style) */}
             <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-              {/* About Dropdown (shadcn NavigationMenu style) */}
+              {/* 1. About Dropdown (Mega Menu Style) */}
               <div
                 className="relative"
                 onMouseEnter={handleMouseEnterAbout}
@@ -124,7 +137,7 @@ export const Navbar: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
-                  className={`inline-flex items-center gap-1 text-sm font-semibold transition-colors py-2 cursor-pointer ${
+                  className={`inline-flex items-center gap-1.5 text-sm font-semibold transition-colors py-2 cursor-pointer ${
                     aboutDropdownOpen ? 'text-blue-600' : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
@@ -137,197 +150,287 @@ export const Navbar: React.FC = () => {
                 </button>
 
                 {aboutDropdownOpen && (
-                  <div className="absolute top-full left-0 w-84 bg-white border border-slate-200/90 rounded-2xl shadow-xl p-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                    <div className="space-y-1">
+                  <div className="absolute top-full -left-12 lg:-left-20 w-[740px] xl:w-[800px] bg-white border border-slate-200/90 rounded-3xl shadow-2xl p-7 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                    <h3 className="text-lg font-extrabold text-slate-900 tracking-tight mb-5">
+                      Tentang Kami
+                    </h3>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6">
+                      {/* Visi & Misi */}
                       <button
                         type="button"
                         onClick={() => openAboutWithTab('visi')}
-                        className="w-full text-left p-2.5 rounded-xl hover:bg-slate-50 transition-colors flex items-start gap-3 group cursor-pointer"
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left cursor-pointer"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          <BookOpen className="w-4 h-4" />
+                        <div className="text-blue-600 shrink-0 mt-0.5">
+                          <BookOpen className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                            Tentang KoneksiAlumni
-                          </p>
-                          <p className="text-[11px] text-slate-500 mt-0.5">
-                            Visi, misi, dan latar belakang platform jembatan karir.
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                            Visi & Misi Platform
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Inisiatif digital akselerasi karir dan sinergi almamater lintas angkatan.
                           </p>
                         </div>
                       </button>
 
+                      {/* Cerita Lulusan */}
                       <Link
                         to="/#about"
-                        className="block p-2.5 rounded-xl hover:bg-slate-50 transition-colors flex items-start gap-3 group"
+                        onClick={() => setAboutDropdownOpen(false)}
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          <Target className="w-4 h-4" />
+                        <div className="text-emerald-600 shrink-0 mt-0.5">
+                          <Target className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                             Cerita Lulusan
-                          </p>
-                          <p className="text-[11px] text-slate-500 mt-0.5">
-                            Dari ruang kelas yang sama menuju panggung industri.
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Dari ruang kuliah yang sama menuju panggung karir industri global.
                           </p>
                         </div>
                       </Link>
 
+                      {/* Standar & Kode Etik */}
                       <button
                         type="button"
                         onClick={() => openAboutWithTab('alur')}
-                        className="w-full text-left p-2.5 rounded-xl hover:bg-slate-50 transition-colors flex items-start gap-3 group cursor-pointer"
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left cursor-pointer"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          <ShieldCheck className="w-4 h-4" />
+                        <div className="text-indigo-600 shrink-0 mt-0.5">
+                          <ShieldCheck className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                            Kode Etik & Alur Bimbingan
-                          </p>
-                          <p className="text-[11px] text-slate-500 mt-0.5">
-                            Standar profesionalisme & perlindungan privasi mahasiswa.
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                            Kode Etik Mentoring
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Standar profesionalisme mentoring & keamanan data CV terenkripsi.
                           </p>
                         </div>
                       </button>
 
+                      {/* FAQ & Pusat Bantuan */}
                       <button
                         type="button"
                         onClick={() => openAboutWithTab('faq')}
-                        className="w-full text-left p-2.5 rounded-xl hover:bg-slate-50 transition-colors flex items-start gap-3 group cursor-pointer"
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left cursor-pointer"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          <HelpCircle className="w-4 h-4" />
+                        <div className="text-amber-600 shrink-0 mt-0.5">
+                          <HelpCircle className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                            FAQ & Pertanyaan Umum
-                          </p>
-                          <p className="text-[11px] text-slate-500 mt-0.5">
-                            Jawaban lengkap seputar pendaftaran, sesi, dan teknis.
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                            FAQ & Tanya Jawab
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Jawaban lengkap seputar pemesanan jadwal, Jitsi Meet, dan akun.
                           </p>
                         </div>
                       </button>
-                    </div>
 
-                    <div className="pt-2 mt-2 border-t border-slate-100 px-2 flex justify-between items-center text-[11px]">
-                      <span className="text-slate-400">25,000+ Alumni Terhubung</span>
+                      {/* Sekretariat Kampus */}
+                      <button
+                        type="button"
+                        onClick={() => openAboutWithTab('kontak')}
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left cursor-pointer"
+                      >
+                        <div className="text-sky-600 shrink-0 mt-0.5">
+                          <Landmark className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                            Sekretariat Kampus
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Gedung Rektorat Lt. 2, jam layanan operasional, email & hotline.
+                          </p>
+                        </div>
+                      </button>
+
+                      {/* 100% Bebas Biaya */}
                       <button
                         type="button"
                         onClick={() => openAboutWithTab('visi')}
-                        className="text-blue-600 font-bold hover:underline cursor-pointer"
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left cursor-pointer"
                       >
-                        Buka Detail
+                        <div className="text-rose-600 shrink-0 mt-0.5">
+                          <Award className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                              100% Bebas Biaya
+                            </h4>
+                            <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                              Gratis
+                            </span>
+                          </div>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Pengabdian sukarela alumni tanpa komersialisasi bagi mahasiswa aktif.
+                          </p>
+                        </div>
                       </button>
                     </div>
                   </div>
                 )}
               </div>
 
-              {/* Network Dropdown (shadcn NavigationMenu style) */}
+              {/* 2. Network Dropdown (Mega Menu Style) */}
               <div
                 className="relative"
                 onMouseEnter={handleMouseEnterNetwork}
                 onMouseLeave={handleMouseLeaveNetwork}
               >
-                <div className="inline-flex items-center gap-1">
-                  <Link
-                    to="/direktori"
-                    className={`text-sm font-semibold transition-colors py-2 ${
-                      location.pathname === '/direktori'
-                        ? 'text-blue-600 font-bold'
-                        : 'text-slate-600 hover:text-slate-900'
+                <button
+                  type="button"
+                  onClick={() => setNetworkDropdownOpen(!networkDropdownOpen)}
+                  className={`inline-flex items-center gap-1.5 text-sm font-semibold transition-colors py-2 cursor-pointer ${
+                    networkDropdownOpen ? 'text-blue-600' : 'text-slate-600 hover:text-slate-900'
+                  }`}
+                >
+                  <span>Network</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                      networkDropdownOpen ? 'rotate-180 text-blue-600' : 'text-slate-400'
                     }`}
-                  >
-                    Network
-                  </Link>
-                  <button
-                    type="button"
-                    onClick={() => setNetworkDropdownOpen(!networkDropdownOpen)}
-                    aria-label="Toggle network dropdown"
-                    className="p-1 text-slate-400 hover:text-blue-600 transition-colors cursor-pointer"
-                  >
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                        networkDropdownOpen ? 'rotate-180 text-blue-600' : ''
-                      }`}
-                    />
-                  </button>
-                </div>
+                  />
+                </button>
 
                 {networkDropdownOpen && (
-                  <div className="absolute top-full left-0 w-84 bg-white border border-slate-200/90 rounded-2xl shadow-xl p-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                    <div className="space-y-1">
+                  <div className="absolute top-full -left-48 lg:-left-56 w-[740px] xl:w-[820px] bg-white border border-slate-200/90 rounded-3xl shadow-2xl p-7 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                    <h3 className="text-lg font-extrabold text-slate-900 tracking-tight mb-5">
+                      Jejaring Alumni
+                    </h3>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6">
+                      {/* Direktori Mentor */}
                       <Link
                         to="/direktori"
-                        className="block p-2.5 rounded-xl hover:bg-slate-50 transition-colors flex items-start gap-3 group"
+                        onClick={() => setNetworkDropdownOpen(false)}
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          <Users className="w-4 h-4" />
+                        <div className="text-blue-600 shrink-0 mt-0.5">
+                          <Users className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                            Direktori Mentor Alumni
-                          </p>
-                          <p className="text-[11px] text-slate-500 mt-0.5">
-                            Temukan senior kampus terverifikasi dan pesan slot bimbingan.
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                            Direktori Mentor
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Temukan 25,000+ senior kampus dan jadwalkan sesi tatap muka 1-on-1.
                           </p>
                         </div>
                       </Link>
 
+                      {/* Statistik Daya Serap */}
                       <button
                         type="button"
                         onClick={() => openNetworkWithTab('overview')}
-                        className="w-full text-left p-2.5 rounded-xl hover:bg-slate-50 transition-colors flex items-start gap-3 group cursor-pointer"
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left cursor-pointer"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                          <TrendingUp className="w-4 h-4" />
+                        <div className="text-emerald-600 shrink-0 mt-0.5">
+                          <TrendingUp className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                            Statistik & Daya Serap
-                          </p>
-                          <p className="text-[11px] text-slate-500 mt-0.5">
-                            86% lulusan terserap kerja & 1,200+ posisi manajerial.
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                            Statistik Daya Serap
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            86% lulusan terserap kerja &lt; 6 bulan & 1,200+ posisi manajerial.
                           </p>
                         </div>
                       </button>
 
+                      {/* Mitra 300+ Perusahaan */}
                       <button
                         type="button"
                         onClick={() => openNetworkWithTab('mitra')}
-                        className="w-full text-left p-2.5 rounded-xl hover:bg-slate-50 transition-colors flex items-start gap-3 group cursor-pointer"
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left cursor-pointer"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors">
-                          <Building2 className="w-4 h-4" />
+                        <div className="text-indigo-600 shrink-0 mt-0.5">
+                          <Building2 className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                             Mitra 300+ Perusahaan
-                          </p>
-                          <p className="text-[11px] text-slate-500 mt-0.5">
-                            Jejaring di GoTo, BCA, Mandiri, Shopee, Google, dan Telkom.
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Persebaran alumni di GoTo, BCA, Mandiri, Shopee, Google & Telkom.
                           </p>
                         </div>
                       </button>
-                    </div>
 
-                    <div className="pt-2 mt-2 border-t border-slate-100 px-2 flex justify-between items-center text-[11px]">
-                      <span className="text-slate-400">300+ Perusahaan Mitra</span>
+                      {/* Alumni Gathering */}
+                      <Link
+                        to="/#events"
+                        onClick={() => setNetworkDropdownOpen(false)}
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left"
+                      >
+                        <div className="text-amber-600 shrink-0 mt-0.5">
+                          <Calendar className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                            Alumni Gathering & Event
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Temu akbar tahunan, webinar karir, dan sesi sharing berkala.
+                          </p>
+                        </div>
+                      </Link>
+
+                      {/* Hub Wilayah & Remote */}
                       <button
                         type="button"
-                        onClick={() => openNetworkWithTab('overview')}
-                        className="text-blue-600 font-bold hover:underline cursor-pointer"
+                        onClick={() => openNetworkWithTab('wilayah')}
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left cursor-pointer"
                       >
-                        Lihat Infografis
+                        <div className="text-sky-600 shrink-0 mt-0.5">
+                          <Globe2 className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                            Hub Wilayah & Global
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Konsentrasi alumni di Jabodetabek, Bandung, Surabaya, dan mancanegara.
+                          </p>
+                        </div>
                       </button>
+
+                      {/* Gabung Jadi Mentor */}
+                      <Link
+                        to="/register"
+                        onClick={() => setNetworkDropdownOpen(false)}
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left"
+                      >
+                        <div className="text-teal-600 shrink-0 mt-0.5">
+                          <HeartHandshake className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                              Gabung Jadi Mentor
+                            </h4>
+                            <span className="text-[10px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full">
+                              Alumni
+                            </span>
+                          </div>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Buka slot luang Anda dan bantu bimbing adik tingkat almamater.
+                          </p>
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 )}
               </div>
 
-              {/* Programs Dropdown (shadcn NavigationMenu style) */}
+              {/* 3. Programs Dropdown (Exact Mega Menu Layout Matching Image 1) */}
               <div
                 className="relative"
                 onMouseEnter={handleMouseEnterPrograms}
@@ -336,11 +439,11 @@ export const Navbar: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setProgramsDropdownOpen(!programsDropdownOpen)}
-                  className={`inline-flex items-center gap-1 text-sm font-semibold transition-colors py-2 cursor-pointer ${
+                  className={`inline-flex items-center gap-1.5 text-sm font-semibold transition-colors py-2 cursor-pointer ${
                     programsDropdownOpen ? 'text-blue-600' : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
-                  <span>Programs</span>
+                  <span>Program</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform duration-200 ${
                       programsDropdownOpen ? 'rotate-180 text-blue-600' : 'text-slate-400'
@@ -349,58 +452,129 @@ export const Navbar: React.FC = () => {
                 </button>
 
                 {programsDropdownOpen && (
-                  <div className="absolute top-full left-0 w-84 bg-white border border-slate-200/90 rounded-2xl shadow-xl p-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                    <div className="space-y-1">
+                  <div className="absolute top-full -left-64 lg:-left-72 w-[760px] xl:w-[840px] bg-white border border-slate-200/90 rounded-3xl shadow-2xl p-7 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                    {/* Header Heading matching Image 1 */}
+                    <h3 className="text-lg font-extrabold text-slate-900 tracking-tight mb-5">
+                      Program
+                    </h3>
+
+                    {/* 3-Column x 2-Row Mega Menu Grid Matching Image 1 */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6">
+                      {/* Col 1, Row 1: Review CV & Portofolio (Like Online Course) */}
                       <Link
                         to="/direktori"
-                        className="block p-2.5 rounded-xl hover:bg-slate-50 transition-colors flex items-start gap-3 group"
+                        onClick={() => setProgramsDropdownOpen(false)}
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                          <FileText className="w-4 h-4" />
+                        <div className="text-teal-700 shrink-0 mt-0.5">
+                          <FileText className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                             Review CV & Portofolio
-                          </p>
-                          <p className="text-[11px] text-slate-500 mt-0.5">
-                            Bedah resume standar ATS & studi kasus Figma 30 menit.
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Bedah resume standar ATS & studi kasus portofolio 30 menit bersama praktisi.
                           </p>
                         </div>
                       </Link>
 
+                      {/* Col 2, Row 1: Simulasi Mock Interview (Like Bootcamp) */}
                       <Link
                         to="/direktori"
-                        className="block p-2.5 rounded-xl hover:bg-slate-50 transition-colors flex items-start gap-3 group"
+                        onClick={() => setProgramsDropdownOpen(false)}
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          <VideoCamera className="w-4 h-4" />
+                        <div className="text-teal-700 shrink-0 mt-0.5">
+                          <VideoCamera className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                             Simulasi Mock Interview
-                          </p>
-                          <p className="text-[11px] text-slate-500 mt-0.5">
-                            Latihan wawancara teknis & live coding via Jitsi Meet.
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Latihan wawancara teknis, live coding, dan problem solving via Jitsi Meet.
                           </p>
                         </div>
                       </Link>
 
+                      {/* Col 3, Row 1: Kemitraan Karir Industri (Like Partnership) */}
                       <Link
-                        to="/direktori"
-                        className="block p-2.5 rounded-xl hover:bg-slate-50 transition-colors flex items-start gap-3 group"
+                        to="/#career"
+                        onClick={() => setProgramsDropdownOpen(false)}
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                          <Compass className="w-4 h-4" />
+                        <div className="text-teal-700 shrink-0 mt-0.5">
+                          <Handshake className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                            1-on-1 Career Sharing
-                          </p>
-                          <p className="text-[11px] text-slate-500 mt-0.5">
-                            Diskusi jalur karir, negosiasi gaji, dan rujukan kerja.
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                            Kemitraan Karir Industri
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Kerjasama rekrutmen langsung & magang dengan 300+ korporasi dan startup.
                           </p>
                         </div>
                       </Link>
+
+                      {/* Col 1, Row 2: 1-on-1 Career Sharing (Like Talks) */}
+                      <Link
+                        to="/direktori"
+                        onClick={() => setProgramsDropdownOpen(false)}
+                        className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left"
+                      >
+                        <div className="text-teal-700 shrink-0 mt-0.5">
+                          <Compass className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                            1-on-1 Career Sharing
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Tanya jawab jenjang karir, negosiasi gaji, dan rujukan kerja (referral) internal.
+                          </p>
+                        </div>
+                      </Link>
+
+                      {/* Col 2, Row 2: AI Career Coach (Like AI Guru - Segera Hadir) */}
+                      <div className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl text-left opacity-90">
+                        <div className="text-slate-600 shrink-0 mt-0.5">
+                          <Brain className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <h4 className="text-sm font-bold text-slate-900">
+                              AI Career Coach
+                            </h4>
+                            <span className="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
+                              Segera Hadir
+                            </span>
+                          </div>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Analisis instan kesesuaian kata kunci resume dengan kualifikasi lowongan.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Col 3, Row 2: Tracer Study & Corporate Training (Like Corporate Training - Segera Hadir) */}
+                      <div className="group flex items-start gap-3.5 -m-2.5 p-2.5 rounded-xl text-left opacity-90">
+                        <div className="text-slate-600 shrink-0 mt-0.5">
+                          <Building2 className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <h4 className="text-sm font-bold text-slate-900">
+                              Corporate Training
+                            </h4>
+                            <span className="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
+                              Segera Hadir
+                            </span>
+                          </div>
+                          <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                            Pelatihan peningkatan kapasitas talenta kerja sama instansi & almamater.
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -439,7 +613,7 @@ export const Navbar: React.FC = () => {
               </Link>
             </nav>
 
-            {/* Auth Action (Pill Login Button) */}
+            {/* Auth Action (Pill Buttons) */}
             <div className="hidden sm:flex items-center gap-3">
               {user ? (
                 <div className="flex items-center gap-3">
@@ -465,12 +639,18 @@ export const Navbar: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2.5">
+                  <Link
+                    to="/register"
+                    className="rounded-full bg-white hover:bg-slate-50 text-slate-700 px-5 py-2 text-sm font-semibold transition-colors border border-slate-200 shadow-2xs"
+                  >
+                    Daftar
+                  </Link>
                   <Link
                     to="/login"
-                    className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-7 py-2 text-sm font-semibold transition-colors shadow-xs"
+                    className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 text-sm font-semibold transition-colors shadow-xs"
                   >
-                    Login
+                    Masuk
                   </Link>
                 </div>
               )}
@@ -525,7 +705,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3.5 py-2.5 text-base font-semibold rounded-lg text-slate-700 hover:bg-slate-50"
             >
-              Programs
+              Program Mentorship
             </Link>
             <Link
               to="/#career"
@@ -571,13 +751,22 @@ export const Navbar: React.FC = () => {
                   </button>
                 </div>
               ) : (
-                <Link
-                  to="/login"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block w-full text-center py-2.5 rounded-full bg-blue-600 text-white text-sm font-semibold shadow-xs"
-                >
-                  Login
-                </Link>
+                <div className="grid grid-cols-2 gap-2">
+                  <Link
+                    to="/register"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block w-full text-center py-2.5 rounded-full border border-slate-200 text-slate-700 text-sm font-semibold shadow-2xs"
+                  >
+                    Daftar
+                  </Link>
+                  <Link
+                    to="/login"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block w-full text-center py-2.5 rounded-full bg-blue-600 text-white text-sm font-semibold shadow-xs"
+                  >
+                    Masuk
+                  </Link>
+                </div>
               )}
             </div>
           </div>
