@@ -8,8 +8,7 @@ export const TestimonialSection: React.FC = () => {
         'The academic environment and practical approach to learning prepared me for the real challenges I faced when stepping into my career after graduating.',
       name: 'Greesel Ornella',
       department: 'Information Systems',
-      avatar:
-        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80',
+      avatar: '/assets/avatar_1.jpg',
     },
     {
       id: 't2',
@@ -17,8 +16,7 @@ export const TestimonialSection: React.FC = () => {
         'The environment was very welcoming and encouraged me to grow both academically and personally. I gained not just knowledge, but also valuable connections and confidence to pursue my career in tech.',
       name: 'Budi Santoso',
       department: 'Communication Studies',
-      avatar:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80',
+      avatar: '/assets/avatar_2.jpg',
     },
     {
       id: 't3',
@@ -26,8 +24,7 @@ export const TestimonialSection: React.FC = () => {
         'My experience here helped me discover my strengths and passion. The projects and teamwork really reflected what happens in the industry, which made the transition to work much smoother. I gained valuable connections in here.',
       name: 'Nadira Safitri',
       department: 'Management Studies',
-      avatar:
-        'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80',
+      avatar: '/assets/avatar_3.jpg',
     },
   ];
 

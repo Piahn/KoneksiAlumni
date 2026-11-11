@@ -21,7 +21,7 @@ export const AboutSection: React.FC = () => {
           <div className="flex flex-col">
             <div className="aspect-4/3 rounded-3xl overflow-hidden bg-slate-100 shadow-sm border border-slate-200/80">
               <img
-                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=80"
+                src="/assets/about_classroom.jpg"
                 alt="A shared classroom, a thousand different journeys"
                 width={900}
                 height={675}
@@ -43,7 +43,7 @@ export const AboutSection: React.FC = () => {
           <div className="flex flex-col">
             <div className="aspect-4/3 rounded-3xl overflow-hidden bg-slate-100 shadow-sm border border-slate-200/80">
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
+                src="/assets/about_connection.jpg"
                 alt="One lifelong connection"
                 width={900}
                 height={675}
@@ -73,7 +73,7 @@ export const AboutSection: React.FC = () => {
 
           <div className="rounded-3xl overflow-hidden shadow-md border border-slate-200/90 aspect-21/9 max-h-[380px] bg-slate-100">
             <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80"
+              src="/assets/about_leaders.jpg"
               alt="Builders Leaders Innovators Alumni"
               width={1400}
               height={600}

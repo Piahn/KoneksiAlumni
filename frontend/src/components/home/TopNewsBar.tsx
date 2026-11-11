@@ -16,28 +16,28 @@ export const TopNewsBar: React.FC = () => {
       title: 'Alumni Return to Campus to Inspire Students...',
       date: '15 April 2026',
       readTime: '2 min read',
-      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=300&q=80',
+      image: '/assets/news_1.jpg',
     },
     {
       id: 'n2',
       title: 'Alumni Gathering 2026 Strengthens Graduate Network',
       date: '15 April 2026',
       readTime: '2 min read',
-      image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=300&q=80',
+      image: '/assets/news_2.jpg',
     },
     {
       id: 'n3',
       title: 'Successful Alumni Shares Career Insights at Student Seminar',
       date: '10 April 2026',
       readTime: '3 min read',
-      image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=300&q=80',
+      image: '/assets/news_3.jpg',
     },
     {
       id: 'n4',
       title: 'Graduation 2026: Thousands of Students Officially Join Alumni Community',
       date: '10 April 2026',
       readTime: '3 min read',
-      image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=300&q=80',
+      image: '/assets/news_4.jpg',
     },
   ];
 
@@ -60,7 +60,7 @@ export const TopNewsBar: React.FC = () => {
                   loading="lazy"
                   onError={(e) => {
                     // Fallback to a solid pleasant campus gradient if network drops
-                    e.currentTarget.src = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=300&q=80';
+                    e.currentTarget.src = '/assets/news_1.jpg';
                   }}
                 />
               </div>

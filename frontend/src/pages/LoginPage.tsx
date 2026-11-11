@@ -55,7 +55,7 @@ export const LoginPage: React.FC = () => {
           {/* Subtle background campus image texture */}
           <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none">
             <img
-              src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1000&q=80"
+              src="/assets/hero_campus_banner.jpg"
               alt="Campus background texture"
               width={1000}
               height={800}

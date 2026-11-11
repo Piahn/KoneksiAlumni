@@ -67,7 +67,7 @@ export const RegisterPage: React.FC = () => {
         <div className="lg:col-span-5 relative bg-gradient-to-br from-blue-700 via-blue-800 to-slate-950 text-white p-8 sm:p-10 flex flex-col justify-between overflow-hidden">
           <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none">
             <img
-              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80"
+              src="/assets/news_1.jpg"
               alt="Campus students texture"
               width={1000}
               height={800}

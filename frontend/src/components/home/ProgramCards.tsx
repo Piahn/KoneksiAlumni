@@ -9,8 +9,7 @@ export const ProgramCards: React.FC = () => {
       description:
         'Learn practical career strategies from successful alumni across various industries.',
       date: '25 October 2026',
-      image:
-        'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80',
+      image: '/assets/event_webinar.jpg',
     },
     {
       id: 'e2',
@@ -18,8 +17,7 @@ export const ProgramCards: React.FC = () => {
       description:
         'Reconnect with fellow alumni and expand your professional network in an evening of meaningful connection.',
       date: '15 June 2026',
-      image:
-        'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80',
+      image: '/assets/event_networking.jpg',
     },
     {
       id: 'e3',
@@ -27,8 +25,7 @@ export const ProgramCards: React.FC = () => {
       description:
         'Celebrate traditions, relive memories, and enjoy campus activities with alumni from all generations.',
       date: '20 April 2026',
-      image:
-        'https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80',
+      image: '/assets/event_homecoming.jpg',
     },
   ];
 
