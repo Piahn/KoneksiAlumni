@@ -21,10 +21,10 @@ export const AboutSection: React.FC = () => {
           <div className="flex flex-col">
             <div className="aspect-4/3 rounded-3xl overflow-hidden bg-slate-100 shadow-sm border border-slate-200/80">
               <img
-                src="/assets/about_classroom.png"
+                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=80"
                 alt="A shared classroom, a thousand different journeys"
-                width={615}
-                height={435}
+                width={900}
+                height={675}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -43,10 +43,10 @@ export const AboutSection: React.FC = () => {
           <div className="flex flex-col">
             <div className="aspect-4/3 rounded-3xl overflow-hidden bg-slate-100 shadow-sm border border-slate-200/80">
               <img
-                src="/assets/about_connection.png"
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
                 alt="One lifelong connection"
-                width={615}
-                height={435}
+                width={900}
+                height={675}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -56,7 +56,7 @@ export const AboutSection: React.FC = () => {
                 One lifelong connection.
               </h3>
               <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-                One lifelong connection.
+                Saling terhubung, membimbing junior, dan membuka jalan karir.
               </p>
             </div>
           </div>
@@ -73,10 +73,10 @@ export const AboutSection: React.FC = () => {
 
           <div className="rounded-3xl overflow-hidden shadow-md border border-slate-200/90 aspect-21/9 max-h-[380px] bg-slate-100">
             <img
-              src="/assets/about_leaders.png"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80"
               alt="Builders Leaders Innovators Alumni"
-              width={870}
-              height={375}
+              width={1400}
+              height={600}
               className="w-full h-full object-cover object-center"
               loading="lazy"
             />

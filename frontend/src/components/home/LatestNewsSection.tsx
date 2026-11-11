@@ -8,28 +8,28 @@ export const LatestNewsSection: React.FC = () => {
       title: 'Alumni Return to Campus to Inspire Students',
       date: '15 April 2026',
       readTime: '2 min read',
-      image: '/assets/news_1.png',
+      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80',
     },
     {
       id: 'n2',
       title: 'Alumni Gathering 2026 Strengthens Graduate Network',
       date: '15 April 2026',
       readTime: '2 min read',
-      image: '/assets/news_2.png',
+      image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80',
     },
     {
       id: 'n3',
       title: 'Successful Alumni Shares Career Insights at Student Seminar',
       date: '10 April 2026',
       readTime: '3 min read',
-      image: '/assets/news_3.png',
+      image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80',
     },
     {
       id: 'n4',
       title: 'Graduation 2026: Thousands of Students Officially Join Alumni C...',
       date: '10 April 2026',
       readTime: '3 min read',
-      image: '/assets/news_4.png',
+      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80',
     },
   ];
 

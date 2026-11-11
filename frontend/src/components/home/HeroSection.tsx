@@ -36,17 +36,52 @@ export const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Hero Campus Facade & Two Graduates Composition (1:1 with Image 1) */}
-      <div className="relative mt-12 sm:mt-14 w-full max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl sm:shadow-2xl bg-white aspect-21/9 max-h-[440px]">
+      {/* Hero Card with Floating Badge (Clean, High-Res & Professional) */}
+      <div className="relative mt-12 sm:mt-16 w-full max-w-5xl mx-auto px-4 flex flex-col items-center">
+        <div className="relative w-full max-w-4xl overflow-hidden rounded-3xl border border-slate-200/90 shadow-xl bg-white aspect-21/9 max-h-[380px]">
           <img
-            src="/assets/hero_graduates_campus.png"
-            alt="KoneksiAlumni Graduates in front of Campus Facade"
-            width={1260}
-            height={516}
+            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=85"
+            alt="KoneksiAlumni Graduates Celebration"
+            width={1600}
+            height={680}
             className="w-full h-full object-cover object-center"
             loading="eager"
           />
+
+          {/* Floating Graduates Badge Composition */}
+          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-2xl px-5 py-3 shadow-lg flex items-center gap-3.5 max-w-md w-[92%] sm:w-auto z-20">
+            <div className="flex -space-x-2.5 overflow-hidden">
+              <img
+                width={36}
+                height={36}
+                className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
+                alt="Alumni Graduate 1"
+              />
+              <img
+                width={36}
+                height={36}
+                className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
+                alt="Alumni Graduate 2"
+              />
+              <img
+                width={36}
+                height={36}
+                className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover"
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80"
+                alt="Alumni Graduate 3"
+              />
+            </div>
+            <div className="text-left">
+              <p className="text-xs font-bold text-slate-900 leading-tight">
+                25,000+ Alumni Terhubung
+              </p>
+              <p className="text-[11px] text-slate-500 mt-0.5">
+                Siap membimbing karir & review resume Anda
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
