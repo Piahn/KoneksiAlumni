@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { Layout } from './components/layout/Layout';
+import { AuthLayout } from './components/layout/AuthLayout';
 import { ProtectedRoute } from './components/auth/ProtectedRoute';
 
 // Pages
@@ -28,11 +29,15 @@ export const App: React.FC = () => {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          <Route element={<Layout />}>
-            {/* Public Pages */}
-            <Route path="/" element={<HomePage />} />
+          {/* Auth Pages (Clean, Dedicated Distraction-Free Layout) */}
+          <Route element={<AuthLayout />}>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+          </Route>
+
+          {/* Main Application Pages with Full Navbar & Footer */}
+          <Route element={<Layout />}>
+            <Route path="/" element={<HomePage />} />
             <Route path="/direktori" element={<AlumniDirectoryPage />} />
 
             {/* Protected Dashboard Pages */}

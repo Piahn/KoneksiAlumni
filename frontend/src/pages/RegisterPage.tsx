@@ -61,8 +61,8 @@ export const RegisterPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center p-4 sm:p-6 lg:p-10 bg-slate-50">
-      <div className="w-full max-w-5xl bg-white border border-slate-200/90 rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[680px]">
+    <div className="w-full flex items-center justify-center">
+      <div className="w-full max-w-5xl bg-white border border-slate-200/90 rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[660px]">
         {/* Left Pane: Visual & Brand Showcase (5 cols) */}
         <div className="lg:col-span-5 relative bg-gradient-to-br from-blue-700 via-blue-800 to-slate-950 text-white p-8 sm:p-10 flex flex-col justify-between overflow-hidden">
           <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none">
