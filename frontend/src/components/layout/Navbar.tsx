@@ -639,18 +639,12 @@ export const Navbar: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <div className="flex items-center gap-2.5">
-                  <Link
-                    to="/register"
-                    className="rounded-full bg-white hover:bg-slate-50 text-slate-700 px-5 py-2 text-sm font-semibold transition-colors border border-slate-200 shadow-2xs"
-                  >
-                    Daftar
-                  </Link>
+                <div className="flex items-center gap-3">
                   <Link
                     to="/login"
-                    className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 text-sm font-semibold transition-colors shadow-xs"
+                    className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-7 py-2 text-sm font-semibold transition-colors shadow-xs"
                   >
-                    Masuk
+                    Login
                   </Link>
                 </div>
               )}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Clock, Mail, CheckCircle2 } from 'lucide-react';
+import { Clock, Mail, MapPin, CheckCircle2 } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -17,20 +17,45 @@ export const ContactSection: React.FC = () => {
     <section className="py-20 sm:py-28 bg-white border-b border-slate-200/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column (5 cols) */}
+          {/* Left Column (5 cols) matching Image 1 */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Connected With Us, <br />
-              We're Here to Help
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-md">
-              Want to share? Contact us directly via below. We'll respond as soon as possible.
-            </p>
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Connected With Us, <br />
+                We're Here to Help
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 mt-3 leading-relaxed max-w-md">
+                Want to share? Contact us directly via below. We'll respond as soon as possible.
+              </p>
+            </div>
 
-            <div className="space-y-6 pt-4">
+            {/* Blue Pill Button matching Image 1 */}
+            <div>
+              <a
+                href="mailto:alumni@koneksialumni.ac.id"
+                className="inline-block rounded-full bg-blue-600 hover:bg-blue-700 text-white px-7 py-2.5 text-xs font-semibold shadow-xs transition-colors"
+              >
+                Send An Email
+              </a>
+            </div>
+
+            <div className="space-y-6 pt-4 border-t border-slate-100">
+              {/* Office Location */}
+              <div className="flex items-start gap-3.5">
+                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-slate-900">Office Location</h4>
+                  <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">
+                    Gedung Rektorat Lantai 2, Kampus Terpadu, Jl. Alumni Raya No. 01, Jakarta
+                  </p>
+                </div>
+              </div>
+
               {/* Working Hours */}
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 shrink-0">
+                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 shrink-0 mt-0.5">
                   <Clock className="w-4 h-4" />
                 </div>
                 <div>
@@ -45,13 +70,13 @@ export const ContactSection: React.FC = () => {
 
               {/* Contact */}
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 shrink-0">
+                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 shrink-0 mt-0.5">
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">Contact</h4>
                   <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">
-                    alumni@youruniversity.ac.id<br />
+                    alumni@koneksialumni.ac.id<br />
                     +62 812-3456-7890 (WhatsApp)
                   </p>
                 </div>
@@ -59,7 +84,7 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Clean Card Form (7 cols) */}
+          {/* Right Column: Clean Card Form (7 cols) matching Image 1 */}
           <div className="lg:col-span-7 bg-white border border-slate-200/90 rounded-2xl p-7 sm:p-8 shadow-xs">
             <h3 className="text-base font-bold text-slate-900 tracking-tight mb-6">
               Send us a message
@@ -118,11 +143,11 @@ export const ContactSection: React.FC = () => {
                   <textarea
                     id="contact-message"
                     aria-label="Type your message here"
+                    rows={4}
                     placeholder="Type your message here"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     required
-                    rows={4}
                     className="w-full px-4 py-2.5 text-xs bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder:text-slate-400 resize-y"
                   />
                 </div>
@@ -130,7 +155,7 @@ export const ContactSection: React.FC = () => {
                 <div className="flex justify-end pt-2">
                   <button
                     type="submit"
-                    className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-7 py-2.5 text-xs font-semibold transition-colors shadow-xs cursor-pointer"
+                    className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-2.5 text-xs font-semibold transition-colors shadow-xs cursor-pointer"
                   >
                     Submit Message
                   </button>

@@ -1,44 +1,42 @@
 import React from 'react';
-import { TopNewsBar } from '../components/home/TopNewsBar';
 import { HeroSection } from '../components/home/HeroSection';
+import { AboutSection } from '../components/home/AboutSection';
 import { StatsBar } from '../components/home/StatsBar';
 import { CompanyLogos } from '../components/home/CompanyLogos';
 import { ProgramCards } from '../components/home/ProgramCards';
 import { OpenSlots } from '../components/home/OpenSlots';
-import { AboutSection } from '../components/home/AboutSection';
+import { LatestNewsSection } from '../components/home/LatestNewsSection';
 import { TestimonialSection } from '../components/home/TestimonialSection';
 import { ContactSection } from '../components/home/ContactSection';
 
 export const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col bg-white">
-      {/* 1. Top News Ticker/Cards */}
-      <div id="news">
-        <TopNewsBar />
-      </div>
-
-      {/* 2. Expansive Hero Banner */}
+      {/* 1. Hero Section matching Image 1 */}
       <HeroSection />
 
-      {/* 3. Our Impact in Numbers (Exact Image 3 Layout) */}
-      <StatsBar />
-
-      {/* 4. Our Alumni Trusted by Companies */}
-      <CompanyLogos />
-
-      {/* 5. Stay Connected Through Events (Exact Image 3 Layout) */}
-      <ProgramCards />
-
-      {/* 6. Explore Latest Job Opportunities (Exact Image 3 Layout) */}
-      <OpenSlots />
-
-      {/* 7. They Started Where You Are Today (Exact Image 2 Layout) */}
+      {/* 2. They Started Where You Are Today (About) matching Image 1 */}
       <AboutSection />
 
-      {/* 8. Hear Our Alumni Voices (Exact Image 2 Layout) */}
+      {/* 3. Our Impact in Numbers matching Image 1 */}
+      <StatsBar />
+
+      {/* 4. Our Alumni Trusted by Companies matching Image 1 */}
+      <CompanyLogos />
+
+      {/* 5. Stay Connected Through Events matching Image 1 */}
+      <ProgramCards />
+
+      {/* 6. Explore Latest Job Opportunities (6 Jobs + View All) matching Image 1 */}
+      <OpenSlots />
+
+      {/* 7. Latest News (4 Cards + View All News) matching Image 1 */}
+      <LatestNewsSection />
+
+      {/* 8. Hear Our Alumni Voices (Testimonials) matching Image 1 */}
       <TestimonialSection />
 
-      {/* 9. Connected With Us, We're Here to Help (Exact Image 2 Layout) */}
+      {/* 9. Connected With Us, We're Here to Help (Contact) matching Image 1 */}
       <ContactSection />
     </div>
   );
